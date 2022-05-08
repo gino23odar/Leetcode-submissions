@@ -14,27 +14,25 @@ var kWeakestRows = function(mat, k) {
         let high = mat[i].length -1;
         let center = 0;
         
-        while(low <= high){
-            center = Math.floor((high + low)/2);
-            if(mat[i][center] === 1 && mat[i][center + 1] === 0){
-                break;
-            } else if(mat[i][center] === 1){
-                low = center + 1;
-            }else if(mat[i][center] === 0){
-                high = center -1;
-            }
-        }
         if(mat[i][0] === 0){
             center  = -1;
+        }else{ 
+         while(low <= high){
+                center = Math.floor((high + low)/2);
+                if(mat[i][center] === 1 && mat[i][center + 1] === 0){
+                    break;
+                } else if(mat[i][center] === 1){
+                    low = center + 1;
+                }else if(mat[i][center] === 0){
+                    high = center -1;
+                }
+            }
         }
         center += 1;
-        console.log(center)
         solArray[i] = (center*rows) + i;
         i++;
     }
-    console.log(solArray);
     solArray.sort(function(a, b) { return a - b;});
-    console.log(solArray);
     for(let i = 0; i < solArray.length; i++){
         solArray[i] = solArray[i] % rows;
     }

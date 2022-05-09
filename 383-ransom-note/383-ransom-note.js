@@ -4,15 +4,12 @@
  * @return {boolean}
  */
 var canConstruct = function(ransomNote, magazine) {
-    const noteArray = ransomNote.split('');
-    const magazineArray = magazine.split('');
-    
-    const ransomNoteIsThere = noteArray.every((letter) => {
-    const indexOfLetter = magazineArray.indexOf(letter);
-    if (indexOfLetter > -1) {
-      magazineArray.splice(indexOfLetter, 1);
-      return true;
+    for (let i = 0; i < ransomNote.length; i++ ) {
+        if (magazine.includes(ransomNote[i])) {
+            magazine = magazine.replace(ransomNote[i], "");
+        } else {
+            return false;
+        }
     }
-  });
-  return ransomNoteIsThere;
+    return true;
 };

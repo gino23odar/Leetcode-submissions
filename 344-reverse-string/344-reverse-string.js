@@ -3,7 +3,7 @@
  * @return {void} Do not return anything, modify s in-place instead.
  */
 var reverseString = function(s) {
-    s = s.reverse();
+    s.reverse();
     
     /* why would I do this?
     let sLength = s.length - 1;

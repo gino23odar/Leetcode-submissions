@@ -4,17 +4,19 @@
  * @return {number}
  */
 var numSubarrayProductLessThanK = function(nums, k) {
-    let count = 0;
-    for(let start = 0; start < nums.length; start++){
-        let windowSum = 1;
-        for(let end = start; end < nums.length; end++){
-            windowSum *= nums[end];
-            if(windowSum < k){
-                count++;
-            } else {
-                break;
-            }
+    if(k <= 1) return 0;
+    let windowSum = 1;
+    let left = 0, right = 0, ans = 0;
+    
+    while(right < nums.length){
+        windowSum *= nums[right];
+        while(windowSum >= k){
+            windowSum /= nums[left];
+            left += 1;
         }
+        ans += (right - left + 1);
+        console.log(ans);
+        right += 1;
     }
-    return count;
+    return ans;
 };

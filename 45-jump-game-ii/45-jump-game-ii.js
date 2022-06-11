@@ -3,12 +3,12 @@
  * @return {number}
  */
 var jump = function(nums) {
-    let newMax = 0, oldMax = 0, jump = 0;
+    let maxj = 0, oldMax = 0, jump = 0;
     for(let i = 0; i < nums.length - 1; i++){
-        newMax = Math.max(newMax, nums[i] + i);
+        maxj = Math.max(maxj, nums[i] + i);
         if(i === oldMax){
             jump++;
-            oldMax = newMax;
+            oldMax = maxj;
         }
     }
     return jump;

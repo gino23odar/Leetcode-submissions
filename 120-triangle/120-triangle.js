@@ -3,10 +3,13 @@
  * @return {number}
  */
 var minimumTotal = function(triangle) {
-    for (let row = triangle.length - 2; row > -1; row--){
-        for (let col = 0; col < triangle[row].length; col++){
-            triangle[row][col] += Math.min(triangle[row+1][col], triangle[row+1][col+1]);
-        } 
-    } 
-    return triangle[0][0];
+    const n = triangle.length;
+    const minPath = triangle[n-1];
+    for(let row=n-2; row >=0; row--) {
+        for(let i=0; i<=row; i++) {
+            minPath[i] = Math.min(minPath[i], minPath[i+1]) + triangle[row][i];
+        }
+    }
+    
+    return minPath[0];
 };

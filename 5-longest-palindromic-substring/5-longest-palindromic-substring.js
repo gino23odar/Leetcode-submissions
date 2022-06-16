@@ -3,28 +3,23 @@
  * @return {string}
  */
 var longestPalindrome = function(s) {
-    let pal = [];
-    
-    for(let i = 0; i < s.length; i++){
-        pal.push(s[0]);
-        findPalindromes(s, i - 1, i + 1);
-        findPalindromes(s, i, i + 1);
-    }
-    
-    function findPalindromes(input, a, b){
-        while(a >= 0 && b < input.length){
-            if(input[a] != input[b]){
-                break;
-            }
-            pal.push(input.substring(a, b+1));
-            a--;
-            b++;
+    let startIndex = 0;
+    let maxLength = 1;
+
+    function expandAroundMiddle(left, right) {
+        while (left >= 0 && right < s.length && s[left] === s[right]) {
+        const currentPalLength = right - left + 1;
+        if (currentPalLength > maxLength) {
+            maxLength = currentPalLength;
+            startIndex = left;
+        }
+        left--;
+        right++;
         }
     }
-    
-    let longest = pal.reduce(
-        function(a,b){
-            return a.length > b.length ? a : b;
-    })
-    return longest;
+    for (let i = 0; i < s.length; i++) {
+        expandAroundMiddle(i - 1, i + 1);
+        expandAroundMiddle(i, i + 1);
+    }
+    return s.slice(startIndex, startIndex + maxLength);
 };

@@ -10,6 +10,5 @@ var rangeBitwiseAnd = function(left, right) {
         right >>= 1;
         shifts++;
     }
-    console.log(left);
     return left << shifts;
 };

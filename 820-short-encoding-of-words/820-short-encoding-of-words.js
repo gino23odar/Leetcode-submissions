@@ -3,14 +3,16 @@
  * @return {number}
  */
 var minimumLengthEncoding = function(words) {
-    let hashed = new Set(words), ans = 0;
-    for(let word of hashed){
-        for(let i = 1; i < word.length; i++){
-            let tmp = word.slice(i);
-            words.includes(tmp) && hashed.delete(tmp);
+    const hashed = new Set(words);
+    for(let word of words) {
+        for(let i = 1; i < word.length; i++) {
+            const suffix = word.slice(i);
+            if(hashed.has(suffix)) {
+                hashed.delete(suffix);
+            }
         }
     }
-    hashed.forEach(j => ans += j.length + 1);
-    
+    let ans = 0;
+    hashed.forEach((i) => {ans += i.length + 1});
     return ans;
 };

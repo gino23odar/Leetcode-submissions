@@ -11,14 +11,16 @@
  * @return {number[]}
  */
 var rightSideView = function(root) {
+    if (!root) return [];
     let ans = [];
-    helper(root, 0, ans);
+    pre(root, 0);
     return ans;
+    
+    function pre(node, h) {
+        if (!node) return;
+        ans[h] = node.val;
+        pre(node.left, h+1);
+        pre(node.right, h+1);
+    }
 };
 
-var helper = function(node, level, ans){
-    if(!node) return;
-    ans[level] = node.val;
-    helper(node.left, level+1, ans);
-    helper(node.right, level+1, ans);
-}

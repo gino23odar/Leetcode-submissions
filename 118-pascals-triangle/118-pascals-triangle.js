@@ -7,7 +7,7 @@ var generate = function(numRows) {
     
     while(numRows > 1){
         let previous = sol[sol.length -1];
-        console.log(previous);
+        //console.log(previous);
         let current = [1];
         for(let i = 1; i < previous.length; i++){
             current.push(previous[i -1] + previous[i]);

@@ -4,9 +4,20 @@
  * @return {number[]}
  */
 var searchRange = function(nums, target) {
-    let first = nums.indexOf(target);
-    let last = nums.lastIndexOf(target);
-    if(first === null) return [-1,-1];
-    let solArr = [first, last];
-    return solArr;
+    let index = 0 , result = [-1,-1], flag = false;
+    while (index <= nums.length -1){
+        if(nums[index] == target){
+            if(result[0] == -1) {
+                result[0] = index;
+                result[1] = index;
+                flag = true;
+            } else {
+                result[1] = index;
+            }
+        } else if(flag) {
+          break;
+        } 
+      index++;
+    }
+    return result;
 };

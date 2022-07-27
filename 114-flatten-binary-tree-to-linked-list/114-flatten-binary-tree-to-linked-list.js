@@ -11,7 +11,7 @@
  * @return {void} Do not return anything, modify root in-place instead.
  */
 var flatten = function(root) {
-    //if(!root) return null;
+    if(!root) return null;
     let cur  = root;
     while(cur){
         if(cur.left){

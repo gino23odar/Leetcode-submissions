@@ -13,7 +13,7 @@ var isPalindrome = function(head) {
     var arrNode = [];
     let currentNode = head;
     while(currentNode){
-        arrNode.push(currentNode['val']);
+        arrNode.push(currentNode.val);
         if(currentNode.next){
             currentNode = currentNode.next;
         } else{
@@ -27,9 +27,5 @@ var isPalindrome = function(head) {
     let arrNodeToString = arrNode.toString();
     let testArrToString = testArr.toString();
     
-    if( arrNodeToString === testArrToString){
-        return true;
-    } else {
-        return false;
-    }
+    return arrNodeToString === testArrToString
 };

@@ -11,22 +11,12 @@
  * @return {string}
  */
 var tree2str = function(root) {
-    if(root === null)
-        return '';
+    if(!root) return "";
+    if(!root.right && !root.left)
+        return root.val+"";
     
-    var result = root.val + '';
+    if(!root.right)
+        return root.val+"(" + tree2str(root.left) + ")";
     
-    var left = tree2str(root.left);
-    var right = tree2str(root.right);
-
-    if(left === '' && right === '')  {
-       return result;
-    } else if(left === '') {
-       result += '()' + '(' + right + ')';
-    } else if (right === '') {
-       result += '(' + left + ')';        
-    } else {
-      result += '(' + left + ')' + '(' + right + ')';  
-    }
-    return result;
+    return root.val+ "(" + tree2str(root.left) + ")(" + tree2str(root.right) + ")";
 };

@@ -17,19 +17,17 @@ var rangeSumBST = function(root, low, high) {
   dfs(root)
   return sum
   function dfs(node) {
-    if (!node) {
-      return
-    }
-    if (node.val < low) {
-      dfs(node.right)
-      return
-    }
-    if (node.val > high) {
-      dfs(node.left)
-      return
-    }
-    sum += node.val
-    dfs(node.left)
-    dfs(node.right)
+      if (node === null) {
+        return sum;
+      }
+
+      if (node.val >= low && node.val <= high) {
+        sum = sum + node.val;
+      }
+
+      sum = dfs(node.left, low, high, sum);
+      sum = dfs(node.right, low, high, sum);
+
+      return sum;
   }
 };

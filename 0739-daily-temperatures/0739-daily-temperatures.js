@@ -3,19 +3,14 @@
  * @return {number[]}
  */
 var dailyTemperatures = function(temperatures) {
-    const result = [];
-    const len = temperatures.length;
-    for(let i = 0; i < len; i++){
-        const tmp1 = temperatures[i];
-        let nextDay = 0;
-        for(let j = i + 1; j < len; j++){
-           const tmp2 = temperatures[j];
-            if(tmp2 > tmp1){
-                nextDay = j - i;
-                break;
-            } 
+    return temperatures.map((temp, idx) => {
+        let nextDay = 0
+        for(let i = idx + 1; i < temperatures.length; i++) {
+            if(temp < temperatures[i]) {
+                nextDay = i - idx
+                return nextDay
+            }
         }
-        result.push(nextDay);
-    }
-    return result;
+        return nextDay
+    })
 };

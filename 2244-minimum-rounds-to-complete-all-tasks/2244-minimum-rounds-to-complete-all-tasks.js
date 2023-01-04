@@ -3,17 +3,19 @@
  * @return {number}
  */
 var minimumRounds = function(tasks) {
-    const hash = {};
-    let minRounds = 0;
-    
-    for (const task of tasks) {
-        hash[task] = hash[task] + 1 || 1;
+  const count = {};
+  for (const t of tasks) {
+    if (!count[t]) {
+      count[t] = 0;
     }
-    
-    for (const count of Object.values(hash)) {
-        if (count < 2) return -1;
-        minRounds += Math.ceil(count / 3);
+    count[t] += 1;
+  }
+  let rounds = 0;
+  for (const num of Object.values(count)) {
+    if (num === 1) {
+      return -1;
     }
-    
-    return minRounds;
+    rounds += Math.ceil(num / 3);
+  }
+  return rounds;
 };

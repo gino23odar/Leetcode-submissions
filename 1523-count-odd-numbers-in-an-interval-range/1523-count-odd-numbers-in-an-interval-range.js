@@ -11,7 +11,7 @@ var countOdds = function(low, high) {
     
     if(isEven(dif) || (isEven(low) && isEven(high))){
         return Math.floor(dif/2);
-    } else if(!isEven(low) || !isEven(high)){
+    } else {
         return Math.ceil(dif/2);
     } 
 };

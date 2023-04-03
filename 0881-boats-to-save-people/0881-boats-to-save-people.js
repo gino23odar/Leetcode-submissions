@@ -4,15 +4,33 @@
  * @return {number}
  */
 var numRescueBoats = function(people, limit) {
-    let res = 0
-    people.sort((a, b) => b - a)
-    let len = people.length
-    let i = 0;
-    let j = len;
-    for(; i < j;i++) { 
-        if (limit >= people[i] + people[j - 1]) {
-            j--
+    let numberOfPeople = new Array(limit+1).fill(0);
+    for(let p of people){
+        numberOfPeople[p]++;
+    }
+    let left = 1, right = limit;
+    let cur = 0, tot = 0, ppl = 0;
+    while(left<=right){
+        while(!numberOfPeople[left] && left<= right){
+            left++;
+        }
+        while(!numberOfPeople[right] && left<= right){
+            right--;
+        }
+        if(cur+right<=limit && ppl<2){
+            cur += right;
+            numberOfPeople[right]--;
+            ppl++;
+        } else if(cur+left<=limit && ppl<2){
+            cur += left;
+            numberOfPeople[left]--;
+            ppl++;
+        } else {
+            cur = 0;
+            tot++;
+            ppl = 0;
         }
     }
-    return i
+    if(cur>0) tot++;
+    return tot;
 };

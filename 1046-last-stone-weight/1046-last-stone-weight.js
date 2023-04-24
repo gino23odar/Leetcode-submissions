@@ -3,11 +3,17 @@
  * @return {number}
  */
 var lastStoneWeight = function(stones) {
-    let len = stones.length;
-    while(len > 1){
-        stones.sort((a,b) => a - b);
-        stones[len-2] = stones[len-1] - stones[len-2];
-        len--;
+    const sorted = stones.sort((a, b) => b - a);
+    let x = null;
+    let y = null;
+    while (sorted.length > 1) {
+        y = sorted.shift();
+        x = sorted.shift();
+        if (x !== y) {
+            y = Math.abs(y - x);
+            sorted.unshift(y);
+            sorted.sort((a, b) => b - a);
+        }
     }
-    return stones[0];
+    return sorted[0] ?? 0;
 };

@@ -7,5 +7,5 @@ var arraySign = function(nums) {
         return 0;
     }
     let product = nums.reduce((a,b) => a * b);
-    return product < 0 ? -1 : product > 0 ? 1 : 0;
+    return product < 0 ? -1 : 1;
 };

@@ -3,26 +3,19 @@
  * @return {number[]}
  */
 var spiralOrder = function(matrix) {
-    if (matrix.length == 0) return [];
-    var ret = [], m = matrix.length, n = matrix[0].length;
-    for (let j = 0; m > 0 && n > 0; ++j) {
-        for (let i = j; i < matrix[0].length - j && m > 0; ++i) {
-            ret.push(matrix[j][i]);
+    let res = [];
+
+    while(matrix.length) {
+        let curr = matrix.shift();
+        res.push(...curr);
+        for(let row of matrix) {
+            let end = row.pop();
+            if(end) {
+                res.push(end);
+                row.reverse();
+            }
         }
-        m--;
-        for (let i = 1+j; i < matrix.length - 1-j && n > 0; ++i) {
-            ret.push(matrix[i][matrix[0].length - 1-j]);
-        }
-        n--;
-        for (let i = matrix[0].length - 1-j; i >= j && m > 0; --i) {
-            ret.push(matrix[matrix.length-1-j][i]);
-        }
-        m--;
-        for (let i = matrix.length - 2-j; i >= 1+j && n > 0; --i) {
-            ret.push(matrix[i][j]);
-        }
-        n--;
+        matrix.reverse();
     }
-    
-    return ret;
+    return res;
 };

@@ -10,18 +10,23 @@
  * @return {number}
  */
 var pairSum = function(head) {
-    let stack = [];
-    
-    while(head) {
-        stack.push(head.val);
-        head = head.next;
-    }
-    
-    let n = stack.length;
-    let max = 0;
-    
-    for(let i = 0; i < n; i++) {
-        max = Math.max(max, stack[i] + stack[n - 1 - i]);
-    }
-    return max;
+  let slo = head;
+  let prv = null;
+  let fst = head;  
+  let largest = 0;
+
+  while( fst && fst.next){
+      fst = fst.next.next;
+      let nxt = slo.next;
+      slo.next = prv;
+      prv = slo;
+      slo = nxt;
+  }
+
+  while (slo){
+      largest = Math.max(largest, (slo.val + prv.val));
+      prv = prv.next;
+      slo = slo.next;
+  }
+    return largest;
 };

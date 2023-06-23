@@ -3,32 +3,22 @@
  * @return {number}
  */
 var longestArithSeqLength = function(nums) {
-    var count = 0;
-    for(var i=0; i<nums.length-1; i++){
-        for(var j=i+1; j<nums.length; j++) {
-            var last = nums[j];
-            var diff = nums[j] - nums[i];
-            var curr = 2;
-            var k = j;
-            while(true) {
-                var next = last + diff;
-                var index = nums.indexOf(next, k+1);
-                if(index == -1){
-                    if(curr > count){
-                        count = curr;
-                    }
-                    break;
-                }
-                else if(index > k){
-                    last = next;
-                    k = index;
-                    curr++;
-                }
-            }
+    var ans = 2;
+    var calc = () => {
+        for (let dif = 0; dif<501/ans; dif++){
+            let mp = new Map();
+            nums.forEach((e) => {
+                if (!mp.has(e)) mp.set(e,0);
+                if (mp.has(e-dif))
+                    mp.set(e,Math.max(mp.get(e),1+mp.get(e-dif)));
+                if (!mp.get(e)) mp.set(e,1);
+                ans = Math.max(ans,mp.get(e));
+            });
         }
-        if(count > nums.length-i){
-            break;
-        }
+        return ans;
     }
-    return count;
+    calc();
+    nums.reverse();
+    calc();
+    return ans;
 };

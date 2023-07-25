@@ -2,6 +2,4 @@
  * @param {number[]} arr
  * @return {number}
  */
-var peakIndexInMountainArray = function(arr) {
-    return arr.indexOf(Math.max(...arr));
-};
+var peakIndexInMountainArray = arr => arr.indexOf(Math.max.apply(null, arr))

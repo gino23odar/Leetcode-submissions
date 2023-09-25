@@ -4,20 +4,9 @@
  * @return {character}
  */
 var findTheDifference = function(s, t) {
-    let map = new Map();
-    for(let i = 0; i < s.length; i++){
-        if(map[s[i]]){
-            map[s[i]] += 1;
-        } else {
-            map[s[i]] = 1;
-        }
-    }
-    
+    let e = 0;
     for(let i = 0; i < t.length; i++){
-        if(map[t[i]] > 0){
-            map[t[i]] -= 1;
-        } else {
-            return t[i]
-        }
+        e ^= t.charCodeAt(i) ^ s.charCodeAt(i);
     }
+    return String.fromCharCode(e)
 };

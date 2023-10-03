@@ -5,18 +5,14 @@
 var numIdenticalPairs = function(nums) {
     let map = new Map();
     let res = 0;
-    for(let i = 0; i < nums.length; i++){
-        if(map[nums[i]]){
-            map[nums[i]] += 1;
+    for(let num of  nums){
+        if(map[num]){
+            res += map[num];
+            map[num] += 1;
         } else {
-            map[nums[i]] = 1;
+            map[num] = 1;
         }
     }
-    
-    const values = Object.values(map);
-    
-    for(let val of values){
-        res += Math.floor(val * (val-1) / 2);
-    }
+
     return res
 };

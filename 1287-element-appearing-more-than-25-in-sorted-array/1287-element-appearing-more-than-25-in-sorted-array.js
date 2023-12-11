@@ -3,16 +3,18 @@
  * @return {number}
  */
 var findSpecialInteger = function(arr) {
-    const quarter = arr.length / 4
-    const map = {}
+    let cur = arr[0];
+    let threshold = arr.length/4.0
+    let curCount = 1;
     
-    for(const item of arr) {
-        map[item] = map[item] + 1 || 1
-    }
-    
-    for(const key in map) {
-        if(map[key] > quarter) {
-            return key
+    for(let i = 1; i < arr.length; i++){
+        if(arr[i] == cur){
+            curCount++;
+            if(curCount > threshold) break
+        } else {
+            cur = arr[i];
+            curCount = 1;
         }
     }
+    return cur
 };

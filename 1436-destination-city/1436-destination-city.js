@@ -3,15 +3,17 @@
  * @return {string}
  */
 var destCity = function(paths) {
-    let or = [];
-    let dt = [];
+    let origin = paths.map(city =>{
+        return city[0]
+    })
+    
+    let orCheck = new Set(origin)
     
     for(let i = 0; i < paths.length; i++){
-        or.push(paths[i][0]);
-        dt.push(paths[i][1]);
+        if(orCheck.has(paths[i][1])){
+            continue;
+        } else {
+            return paths[i][1]
+        }
     }
-    
-    let ans = dt.filter(city => !or.includes(city))[0];
-    
-    return ans
 };

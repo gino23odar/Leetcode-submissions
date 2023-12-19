@@ -19,7 +19,7 @@ var imageSmoother = function(img) {
                 }
             }
         }
-        return { sum, div };
+        return Math.floor(sum/div);
     }
     
     let resArr = [];
@@ -27,8 +27,7 @@ var imageSmoother = function(img) {
     for(let i = 0; i < lenW; i++){
         let arr = [];
         for(let j = 0; j < lenH; j++){
-            const { sum, div } = calcAvg(i, j);
-            arr.push( Math.floor(sum / div));
+            arr.push(calcAvg(i, j));
         }
         resArr.push(arr)
     }

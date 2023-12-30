@@ -4,23 +4,16 @@
  */
 var makeEqual = function(words) {
     let len = words.length;
-    let map = new Map();
+    let count = new Array(26).fill(0);
     
-    for(let i = 0; i < words.length; i++){
-        for(let j = 0; j < words[i].length; j++){
-            if(map.get(words[i][j])){
-                map.set(words[i][j], map.get(words[i][j]) + 1);
-            } else {
-                map.set(words[i][j], 1);
-            }
+    for(let word of words){
+        for(let char of word){
+            count[char.charCodeAt(0) - 97]++
         }
     }
-    for(let [key, value] of map.entries()){
-        if((value % len) == 0){
-            continue;
-        } else {
-            return false
-        }
+    
+    for(let char of count){
+        if(char % len !== 0) return false
     }
     return true
 };

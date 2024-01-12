@@ -1,12 +1,9 @@
 class Solution:
     def halvesAreAlike(self, s: str) -> bool:
-        mid = len(s) // 2
-        a = s[:mid]
-        b = s[mid:]
+        cnt, vowels = 0, 'a,e,i,o,u,A,E,I,O,U'
         
-        regex = re.compile(r'[aeiouAEIOU]', re.IGNORECASE)
+        for i in range(len(s)//2):
+            cnt += s[i] in vowels
+            cnt -= s[~i] in vowels
         
-        a_count = sum(1 for char in a if regex.match(char))
-        b_count = sum(1 for char in b if regex.match(char))
-        
-        return a_count == b_count
+        return not cnt

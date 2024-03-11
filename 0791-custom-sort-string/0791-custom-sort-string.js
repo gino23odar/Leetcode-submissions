@@ -4,18 +4,30 @@
  * @return {string}
  */
 var customSortString = function(order, s) {
-    let map = new Map();
-    let word = '', aft = '';
-    for(let i = 0; i < s.length; i++){
-        map.set(s[i], map.get(s[i])+1||1);
-        if(!order.includes(s[i])) aft += s[i]
-    }
-    for(let i = 0; i < order.length; i++){
-        if(map.get(order[i])){
-            for(let j = 0; j < map.get(order[i]); j++){
-                word += order[i]
+    let answer = ""
+    let res = ""
+    let freq = {}
+    
+    s.split("").forEach((char, index) => {
+        if (!(char in freq)) freq[char] = 0
+        freq[char]++
+    })
+    
+    order.split("").forEach((char, index) => {
+        if (char in freq) { 
+            for(let x = 0; x < freq[char]; x++) {
+                answer += char
             }
+            delete freq[char]
         }
-    }
-    return word + aft
+    })
+    
+    freq = Object.entries(freq)
+    
+    freq.forEach(e => {
+       for(let x = 0; x < e[1]; x++) {
+            answer += e[0]
+        } 
+    })
+    return answer
 };

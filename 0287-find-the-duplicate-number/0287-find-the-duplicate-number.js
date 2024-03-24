@@ -3,12 +3,16 @@
  * @return {number}
  */
 var findDuplicate = function(nums) {
-    let map = new Map();
-    for(let i = 0; i < nums.length; i++){
-        if(map[nums[i]]){
-            return nums[i]
-        } else {
-            map[nums[i]] = 1;
-        }
+    let slow = 0;
+    let fast = 0;
+    do {
+        slow = nums[slow];
+        fast = nums[nums[fast]];
+    } while(slow !== fast)
+    slow = 0;
+    while(slow !== fast){
+        slow = nums[slow];
+        fast = nums[fast];
     }
+    return slow;
 };

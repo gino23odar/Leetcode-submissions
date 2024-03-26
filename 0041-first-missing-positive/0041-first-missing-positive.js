@@ -3,18 +3,22 @@
  * @return {number}
  */
 var firstMissingPositive = function(nums) {
-    let map = new Map();
-    for(let i = 0; i < nums.length; i++){
-        map.set(nums[i], map.get(nums[i])+1 || 1);
-    }
-    let i = 1;
-    
-    while(i <= nums.length){
-        if(map.get(i)){
-            i++;
-        } else {
-            break;
+    const min = 1, max = nums.length
+    for (let i = 0; i < nums.length; i++ ) {
+        if (nums[i] < min || max < nums[i]) {
+            nums[i] = 0
         }
     }
-    return i;
+
+    for (let i = 0; i < nums.length; i++) {
+        let num = nums[i]
+        while (num > 0) {
+            const temp = nums[num - 1]
+            nums[num - 1] = -1
+            num = temp
+        }
+    }
+
+    const index = nums.findIndex( num => num !== -1)
+    return index !== -1 ? index + 1 : max + 1
 };

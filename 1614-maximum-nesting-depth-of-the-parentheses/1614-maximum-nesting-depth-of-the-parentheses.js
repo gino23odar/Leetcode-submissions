@@ -4,17 +4,17 @@
  */
 var maxDepth = function(s) {
     let maxDepth = 0;
-    let count = 0;
+    let stack = [];
     
     for (let i = 0; i < s.length; i++) {
         let char = s[i];
         if (char === "(") {
-            ++count;
-            maxDepth = Math.max(maxDepth, count)
+            stack.push(char)
+            maxDepth = Math.max(maxDepth, stack.length)
         }
         
         if (char === ")") {
-            --count
+            stack.pop()
         }
     }
     

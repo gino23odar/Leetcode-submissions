@@ -17,8 +17,8 @@ var removeKdigits = function(num, k) {
         st.pop();
         k--;
     }
-    while(st.length && st[0] == 0){
+    while(st.length > 1 && st[0] == 0){
         st.shift();
     }
-    return st.length? st.join('') : '0'
+    return st.join('')
 };

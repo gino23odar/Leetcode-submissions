@@ -3,22 +3,43 @@
  * @return {number}
  */
 var maximalRectangle = function(matrix) {
-    if (matrix.length <= 0) return 0;
-    const n = matrix.length;
-    const m = matrix[0].length;
-    const dp = new Array(n).fill([]).map(() => new Array(m).fill(0))
-    let maxArea = 0;
-    for (let r = 0; r < n; r++) {
-        for (let c = 0; c < m; c++) {
-            if (matrix[r][c] == 0) continue;
-            dp[r][c] += dp[r - 1] ? dp[r - 1][c] + 1 : 1;
-            let min = dp[r][c];
-            for (let k = c; k >= 0; k--) {
-                if (dp[r][k] == 0) break;
-                min = dp[r][k] < min ? dp[r][k] : min;
-                maxArea = Math.max(maxArea, min * (c - k + 1))
-            }
-        }
+  const rowLength = matrix.length;
+  const columnLength = matrix[0].length;
+  const heights = new Array(columnLength).fill(0);
+  let maximumArea = 0;
+  for (let rowIndex = 0; rowIndex < rowLength; rowIndex++) {
+    for (let columnIndex = 0; columnIndex < columnLength; columnIndex++) {
+      heights[columnIndex] = matrix[rowIndex][columnIndex] === '1' ? heights[columnIndex] + 1 : 0;
     }
-    return maxArea;
+
+    const stack = [];
+    let heightIndex = 0;
+    while (heightIndex < heights.length) {
+      if (stack.length === 0 || heights[heightIndex] >= heights[stack[stack.length - 1]]) {
+        stack.push(heightIndex);
+        heightIndex++;
+      } else {
+        const height = heights[stack.pop()];
+        let width = heightIndex - stack[stack.length - 1] - 1;
+        if (stack.length === 0) {
+          width = heightIndex;
+        }
+
+        maximumArea = Math.max(maximumArea, height * width);
+      }
+    }
+
+    while (stack.length !== 0) {
+      const height = heights[stack.pop()];
+      let width = heightIndex - stack[stack.length - 1] - 1;
+      if (stack.length === 0) {
+        width = heightIndex;
+      }
+
+      maximumArea = Math.max(maximumArea, height * width);
+
+    }
+  }
+
+  return maximumArea;
 };

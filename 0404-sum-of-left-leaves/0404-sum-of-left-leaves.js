@@ -11,21 +11,16 @@
  * @return {number}
  */
 var sumOfLeftLeaves = function(root) {
-    const queue = [root]
-    let sum = 0
-    
-    while (queue.length > 0) {
-        const node = queue.shift()
-        if (node.left) {
-            if (!node.left.left && !node.left.right) {
-                sum += node.left.val
-            } else {
-                queue.push(node.left)
-            }
-        }
-        if (node.right) {
-            queue.push(node.right)
-        }
+  const sum = [0];
+
+  const dfs = (node, dir) => {
+    if (!node.left && !node.right && dir === "left") {
+      sum[0] += node.val;
+      return
     }
-    return sum
+    node.left && dfs(node.left, "left");
+    node.right && dfs(node.right, "right");
+  }
+  dfs(root, null);
+  return sum[0];
 };

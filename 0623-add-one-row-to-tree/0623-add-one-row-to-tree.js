@@ -13,18 +13,19 @@
  * @return {TreeNode}
  */
 var addOneRow = function(root, val, depth) {
-	if (depth === 1) return new TreeNode(val, root);
-
-	const helper = (node, currentDep = 1) => {
-		if (!node) return;
-		if (currentDep === depth - 1) {
-			const { left, right } = node;
-			node.left = new TreeNode(val, left);
-			node.right = new TreeNode(val, null, right);
-		}
-		helper(node.left, currentDep + 1);
-		helper(node.right, currentDep + 1);
-	};
-	helper(root);
-	return root;
+    let mockNode = new TreeNode(null, root, null)
+    const dfs = (node, currDepth) => {
+        if (currDepth === depth - 1) {
+            let newLeft = new TreeNode(val, node.left, null)
+            let newRight = new TreeNode(val, null, node.right)
+            node.left = newLeft
+            node.right = newRight
+            return node
+        }
+        node.left && dfs(node.left, currDepth + 1)
+        node.right && dfs(node.right, currDepth + 1)
+        return node
+    }
+    dfs(mockNode, 0)
+    return mockNode.left
 };

@@ -4,14 +4,15 @@
  * @return {number}
  */
 var minOperations = function(nums, k) {
+    let count = k;
     for(let i = 0; i < nums.length; i++){
-        k ^= nums[i]
+        count ^= nums[i]
     }
     
-    let count = 0;
-    while(k){
-        count += k & 1;
-        k >>>= 1;
+    let total = 0;
+    while(count){
+        count = count & count-1;
+        total++
     }
-    return count
+    return total
 };

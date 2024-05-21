@@ -3,15 +3,15 @@
  * @return {number[][]}
  */
 var subsets = function(nums) {
-    let res = [];
-    const backtrack = (start=0, arr=[]) =>{
-        res.push([...arr]);
+    let res = [[]];
+    const backtrack = (start, cur) =>{
         for(let i = start; i < nums.length; i++){
-            arr.push(nums[i]);
-            backtrack(i+1, arr);
-            arr.pop();
+            cur.push(nums[i]);
+            res.push([...cur])
+            backtrack(i+1, cur);
+            cur.pop();
         }
     }
-    backtrack();
+    backtrack(0,[]);
     return res;
 };

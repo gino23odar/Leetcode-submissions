@@ -5,21 +5,45 @@
  * @return {number}
  */
 var maxScoreWords = function(words, letters, score) {
-    let cnt = Array(26).fill(0), n = words.length, res = 0;
-    for (const c of letters) cnt[c.charCodeAt() - 97]++;
-    outer:
-    for (let i = 0; i < 1 << n; i++) {
-        let ncnt = Array(26).fill(0), sum = 0;
-        for (let j = 0; j < n; j++) {
-            if (i & (1 << j)) {
-                for (const c of words[j]) ncnt[c.charCodeAt() - 97]++;
+    let counter = {}
+    for(let c of letters) {
+        if(!counter[c]) counter[c] = 1;
+        else counter[c]++;
+    }
+    let scores = [];
+    for(let w of words) {
+        let sc = 0;
+        for(let c of w) {
+            sc += score[c.charCodeAt() - 'a'.charCodeAt()];
+        }
+        scores.push(sc);
+    }
+    
+    
+    let ans = 0;
+    
+    const dfs = function(start, total) {
+        
+        ans = Math.max(ans, total);
+        
+        for(let i=start; i<words.length; i++) {
+            const word = words[i];
+            
+            let valid = true;
+            for(let c of word) {
+                valid &= --counter[c] >= 0
+            }
+            if(valid) {
+                dfs(i+1, total+scores[i]);
+            }
+            
+            for(let c of word) {
+                ++counter[c];
             }
         }
-        for (let j = 0; j < 26; j++) {
-            if (ncnt[j] > cnt[j]) continue outer;
-            sum += ncnt[j] * score[j];
-        }
-        res = Math.max(res, sum);
     }
-    return res;
+    
+    dfs(0, 0);
+    
+    return ans;
 };

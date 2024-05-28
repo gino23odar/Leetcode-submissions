@@ -5,24 +5,20 @@
  * @return {number}
  */
 var equalSubstring = function(s, t, maxCost) {
-    let costs  = [];
-    for(let i = 0; i < s.length; i++){
-        costs.push(Math.abs(s.charCodeAt(i) - t.charCodeAt(i)))
-    }
-    //console.log(costs)
-    if(Math.min(...costs) > maxCost) return 0
-    let maxLen = 1;
-    for(let st = 0; st < costs.length; st++){
-        let cur = costs[st];
-        if(cur > maxCost) continue;
-        for(let end = st+1; end < costs.length; end++){
-            cur += costs[end];
-            if(cur > maxCost) break;
-            if(cur <= maxCost && (end - st + 1) > maxLen){
-                maxLen = end - st + 1;
-                //console.log(end,st)
-            }
+    let i=0
+    let j=0
+    let res = 0
+
+    for(i=0;i<s.length;i++){
+        let cost = Math.abs(s.charCodeAt(i) - t.charCodeAt(i))
+        maxCost-=cost
+
+        while(maxCost < 0){
+            let cost = Math.abs(s.charCodeAt(j) - t.charCodeAt(j))
+            maxCost+=cost
+            j++
         }
+        res = Math.max(res, i-j+1)
     }
-    return maxLen
+    return res
 };

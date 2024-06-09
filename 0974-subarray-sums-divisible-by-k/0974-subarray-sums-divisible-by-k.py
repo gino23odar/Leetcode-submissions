@@ -3,9 +3,9 @@ class Solution:
         dic = {0:1}
         cur_sum = 0
         count = 0
-        for i in range(0,len(nums)):
+        for i in range(len(nums)):
             cur_sum += nums[i]
-            rem = ((cur_sum % k) + k)%k
+            rem = cur_sum % k
             if rem in dic:
                 count += dic[rem]
                 dic[rem] += 1

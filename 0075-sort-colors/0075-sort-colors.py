@@ -3,13 +3,10 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        d = [0,0,0]
-        for num in nums:
-            d[num] += 1
-        idx = 0
-        for num, c in enumerate(d):
-            for _ in range(c):
-                nums[idx] = num
-                idx += 1
+        n = len(nums)
+        for i in range(n):
+            for j in range(n-i-1):
+                if nums[j] > nums[j+1]:
+                    nums[j],nums[j+1] = nums[j+1], nums[j]
         
             

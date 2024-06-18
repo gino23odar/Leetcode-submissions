@@ -5,26 +5,25 @@
  * @return {number}
  */
 var maxProfitAssignment = function(difficulty, profit, worker) {
-    let jobs = []
-    for(let i = 0; i < difficulty.length; i++){
-        jobs.push([difficulty[i],profit[i]])
+    worker.sort((a,b) => a - b);
+    const jobs = [];
+
+    for (let i = 0; i < profit.length; i++) {
+        jobs[i] = i;
     }
-    jobs.sort((a,b) => {
-        if(a[1] !== b[1]){
-            return b[1] - a[1]
+
+    jobs.sort((a,b) =>profit[a] - profit[b]);
+
+    let idx = jobs.length - 1;
+    let result = 0;
+    for (let i = worker.length - 1; i >= 0; i--) {
+        while (worker[i] < difficulty[jobs[idx]]){
+            idx--;
+            if(idx < 0) {
+                return result;
+            }
         }
-        return a[0] - b[0]
-    })
-    // console.log(jobs)
-    let maxP = 0
-    for(let i = 0; i < worker.length; i++){
-        for(let j = 0; j < jobs.length; j++){
-            if(jobs[j][0] > worker[i]) continue;
-            maxP += jobs[j][1];
-            // console.log('job', jobs[j][1])
-            // console.log(maxP)
-            break;
-        }
+        result += profit[jobs[idx]];
     }
-    return maxP
+    return result;
 };

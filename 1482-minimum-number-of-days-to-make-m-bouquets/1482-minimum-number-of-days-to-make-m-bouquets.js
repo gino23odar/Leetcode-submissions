@@ -5,33 +5,30 @@
  * @return {number}
  */
 var minDays = function(bloomDay, m, k) {
-    if(m*k > bloomDay.length)return -1
-    let start = 0,end = Number.MAX_VALUE,final=-1
-    
-    while(start <= end){
-          let mid = Math.floor((start+end)/2)
-          if(helper(bloomDay,m,k,mid)){
-              end = mid - 1
-              final = mid
-          }else{
-              start = mid+1
-          }
-    }
-    return final
-};
-
-var helper = (days,m,k,mid)=>{
-    let count=0,total=0
-    for(let i=0;i<days.length;i++){
-        if(days[i] <= mid){
-            count++
-            if(count == k){
-                total++
-                count = 0
+    if(m*k>bloomDay.length) return -1
+    let left=Math.min(...bloomDay)
+    let right=Math.max(...bloomDay)
+    let ans=right
+    while(left<=right){
+        let count=0
+        let number=0
+        let mid=Math.floor((left+right)/2)
+        for(let i=0;i<bloomDay.length;i++){
+            if(bloomDay[i]<=mid){
+                count++
+                if(count===k){
+                    number++
+                    count=0
+                }
             }
-        }else{
-            count = 0
+            if(bloomDay[i]>mid) count=0
+        }
+        if(number<m) left=mid+1
+        if(number>=m) {
+            right=mid-1
+            ans=mid
         }
     }
-    return total >= m
-}
+    return ans
+};
+

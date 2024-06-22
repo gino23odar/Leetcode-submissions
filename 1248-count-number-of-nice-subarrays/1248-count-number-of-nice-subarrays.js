@@ -3,18 +3,25 @@
  * @param {number} k
  * @return {number}
  */
-var numberOfSubarrays = function(nums, k) {
-    let map = new Map();
-    map.set(0, 1);
-    let sum = 0;
-    let counter =0;
-    let len = nums.length;
-    for(let g=0; g<len; g++){
-        let curNumModified = (nums[g] %2 == 0) ? 0 : 1;
-        sum = sum + curNumModified;
-        if( map.has(sum-k) ) counter = map.get(sum-k)  + counter;
-        if(map.has(sum)) map.set(sum, map.get(sum) + 1);
-        else map.set(sum, 1)
+const f = (nums,k) => {
+    if(k < 0) return 0
+    let counter = 0
+    let l = 0 
+    let r = 0
+    let sum = 0
+    while(r < nums.length){
+        sum += nums[r]%2 !== 0 ? 1 : 0 
+        if(sum > k){ 
+            while(sum > k){
+                sum -= nums[l]%2 !== 0? 1 : 0
+                l++
+            }
+        }
+        counter += r-l+1 
+        r++ 
     }
     return counter
 };
+var numberOfSubarrays = function(nums, k) {
+    return f(nums,k) - f(nums,k-1)
+}

@@ -3,28 +3,30 @@
  * @return {number}
  */
 var minimumDeletions = function(s) {
-    const dpA = [];
-    let counter = 0;
-    for (let i = 0; i < s.length; i++) {
-        dpA[i] = counter;
-        if (s[i] === 'b') {
-            counter++;
-        }
-    }
-    
-    counter = 0;
-    const dpB = [];
-    for (let i = s.length - 1; i >= 0; i--) {
-        dpB[i] = counter;
+    const countA = [];
+    let count = 0;
+    for (let i = s.length - 1;  i >= 0; i--) {
         if (s[i] === 'a') {
-            counter++;
+            count++;
+        }
+        countA[i] = count;
+    }
+    const getMin = function(start) {
+        if (start >= s.length) {
+            return 0;
+        }
+        if (countA[start] === 0) {
+            return 0;
+        }
+        
+        const l = s[start];
+        if (l === 'a') {
+            return getMin(start + 1);
+        } else {
+            return Math.min(1 + getMin(start + 1), countA[start]);
         }
     }
-
-    let minDelete = s.length;
-    for (let i = 0; i < s.length; i++) {
-        minDelete = Math.min(minDelete, dpA[i] + dpB[i]);
-    }
     
-    return minDelete;
+    return getMin(0);
+
 };

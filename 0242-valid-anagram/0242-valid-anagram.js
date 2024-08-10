@@ -4,8 +4,8 @@
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
-    let one = s.split('').sort().join('');
-    let two = t.split('').sort().join('');
+    s = s.split('').sort().join('');
+    t = t.split('').sort().join('')
     
-    return one == two
+    return s == t
 };

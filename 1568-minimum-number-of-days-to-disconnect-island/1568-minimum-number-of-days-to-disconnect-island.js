@@ -2,46 +2,36 @@
  * @param {number[][]} grid
  * @return {number}
  */
+const dirs = [-1,0,1,0,-1]    
 var minDays = function(grid) {
-    let directions = [[-1, 0], [1, 0], [0, -1], [0, 1]];
-    let N=grid.length;
-    let M=grid[0].length;
-    var vis=new Set();
-    let one_cells=[];
-
-    function dfs(i,j){
-        if(i<0 || i>=N || j<0 || j>=M || grid[i][j]==0 || vis.has(`${i},${j}`))return;
-        vis.add(`${i},${j}`);
-        for(let [x,y] of directions){
-            dfs(i+x, j+y);
-        }
-    }
-    let components=0;
-    for(let i=0;i<grid.length;i++){
-        for(let j=0;j<grid[i].length;j++){
-            if(grid[i][j]==1)one_cells.push([i,j]);
-            if(!vis.has(`${i},${j}`) && grid[i][j]==1){
-                dfs(i,j);
-                components++;
-                if(components>1)return 0;
+    let n = grid.length, m = grid[0].length, total = 0, ans = 2, {min} = Math                     
+    
+    const dfs = (i, j, from=-3, turn=2) => {
+        total++, grid[i][j] *= turn                             // Keep track of total land & use grid
+        let preRes = 1e9, postRes = 1e9                         //   to keep track of visited lands
+        for (let d = 0; d < 4; d++)                             // Navigate four directions,
+            if (d !== (from + 2) % 4) {                         //   but ignore previous land,
+                let x = i + dirs[d], y = j + dirs[d + 1]        //   since we're looking for a cycle
+                if (~x && ~y && x < n && y < m)
+                    if (grid[x][y] === 1)
+                        postRes = min(postRes,                  // postRes is result *after* next move
+                                      dfs(x, y, d, turn + 1))
+                    else if (grid[x][y] > 1)
+                        preRes = min(preRes, grid[x][y])        // preRes is result *before* next move
             }
-        }
+        if ((preRes === 1e9 && postRes == 1e9) ||               // Dead end ("leaf node") land
+            (turn > 2 && (postRes < 1e9 && postRes >= turn)))   // Articulation point: more lands, but
+            ans = 1                                             //   no path back to before this land
+        return min(preRes, postRes)
     }
-
-    if(components==0)return 0;
-    let N_=vis.size;
-    one_cells.push([one_cells[0][0],one_cells[0][1]]);
-    if(components==1){
-        for(let i=0; i<one_cells.length-1;i++){
-            vis=new Set();
-            let x=one_cells[i+1][0];
-            let y=one_cells[i+1][1];
-            grid[x][y]=0;
-            dfs(one_cells[i][0], one_cells[i][1]);
-            if(vis.size != N_-1 || (vis.size==0 && N_-1==0))return 1;
-            grid[x][y]=1;
-
-        }
-    }
-    return 2;
+    
+    for (let i = 0; i < n; i++)
+        for (let j = 0; j < m; j++)
+            if (grid[i][j] === 1) {
+                if (total)
+                    return 0                                    // If this is a second island, return 0
+                dfs(i, j)                                       // Otherwise, run DFS helper
+            }
+    
+    return total < 3 ? total : ans  
 };

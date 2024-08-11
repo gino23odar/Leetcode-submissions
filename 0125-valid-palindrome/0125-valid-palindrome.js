@@ -3,7 +3,24 @@
  * @return {boolean}
  */
 var isPalindrome = function(s) {
-    let str = s.replace(/[^a-zA-Z0-9]+/g, '').toLowerCase();
+    let l = 0, r = s.length-1;
+    const regex = /^[a-z0-9]+$/;
+    s = s.toLowerCase();
+    console.log(s)
     
-    return str == str.split('').reverse().join('')
+    while(l < r){
+        if(!regex.test(s[l])){
+            l++;
+            continue;
+        }
+        if(!regex.test(s[r])){
+            r--;
+            continue;
+        }
+        if(s[l] !== s[r]) return false;
+        l++;
+        r--;
+        
+    }
+    return true
 };

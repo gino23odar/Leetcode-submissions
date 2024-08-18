@@ -3,16 +3,25 @@
  * @return {number}
  */
 var nthUglyNumber = function(n) {
-    const factors = [2, 3, 5];
-    const offset = [0, 0, 0];
-    const ugly = [1];
-    n--;
-    
-    while(n--) {
-        const candidates = factors.map((val, i) => ugly[offset[i]] * val);
-        const next = Math.min(...candidates);
-        candidates.forEach((val, i) => candidates[i] === next ? offset[i]++ : null);
-        ugly.push(next);
+    const result = [1];
+    let cur2 = 0;
+    let cur3 = 0;
+    let cur5 = 0;
+    while (result.length < n) {
+        const num1 = result[cur2] * 2;
+        const num2 = result[cur3] * 3;
+        const num3 = result[cur5] * 5;
+        const smallest = Math.min(num1, num2, num3);
+        result.push(smallest);
+        if (smallest % 2 === 0) {
+            cur2++;
+        }
+        if (smallest % 3 === 0) {
+            cur3++;
+        }
+        if (smallest % 5 === 0) {
+            cur5++;
+        } 
     }
-    return ugly.pop();
+    return result[n -1];
 };

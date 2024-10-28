@@ -1,29 +1,26 @@
 import java.util.*;
 
 class Solution {
-    public int longestSquareStreak(int[] nums) {
-        int maxLen = 0;
+    public int longestSquareStreak(int[] a) {
+        int n = a.length;
 
-        Set<Integer> set = new HashSet<>();
-        for (int n : nums) {
-            set.add(n);
+        int[] dp = new int[100001];
+
+        int max = 0;
+        for(int x : a){
+            max = Math.max(max, x);
+            dp[x] = 1;
         }
 
-        Set<Integer> visited = new HashSet<>();
-        
-        for (int n : nums) {
-            if (visited.contains(n)) continue;
-            int len = 1;
-            int current = n;
 
-            while (current > 0 && current <= Math.sqrt(Integer.MAX_VALUE) && set.contains(current * current)) {
-                visited.add(current);
-                current *= current;
-                len++;
-            }
-            maxLen = Math.max(maxLen, len);
+        int ans = -1;
+        for(int i = (int)Math.sqrt(max); i >= 2; i--){
+            if(dp[i] == 0) continue;
+            if(dp[i * i] == 0) continue;
+
+            dp[i] = 1 + dp[i * i];
+            ans = Math.max(ans, dp[i]);
         }
-
-        return maxLen > 1? maxLen : -1;
+        return ans;
     }
 }

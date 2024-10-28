@@ -3,27 +3,20 @@
  * @return {number}
  */
 var longestSquareStreak = function(nums) {
-    let map = new Map();
-    let mlen = -1;
-    
-    nums.sort((a,b) => a - b);
-    
-    for(let num of nums){
-        map.set(num, map.get(num)+1 || 1);
-    }
-    
-    const sq = (num) =>{
-        let ans = 1;
-        num *= num;
-        while(map.get(num)){
-            ans++;
-            num *= num;
+    const map = {}
+    for (let n of nums) map[n] = true
+
+    let max = -1
+    for (let n of nums) {
+        let cnt = 1
+        while (map[n*n]) {
+            n *= n
+            cnt++
+            max = Math.max(cnt, max)
         }
-        return ans == 1? -1: ans;
     }
-    
-    for(let num of nums){
-        mlen = Math.max(sq(num), mlen)
-    }
-    return mlen
+
+    return max
 };
+
+    

@@ -1,0 +1,20 @@
+class Solution {
+    public boolean isPerfectSquare(int num) {
+        long l = 0;
+        long r = num;
+        
+        while(l <= r){
+            long ps = l + (r-l)/2;
+            long ch = ps * ps;
+            
+            if(ch == num){
+                return true;
+            } else if(ch > num){
+                r = ps - 1;
+            } else {
+                l = ps + 1;
+            }
+        }
+        return false;
+    }
+}

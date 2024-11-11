@@ -10,6 +10,8 @@ var subsets = function(nums) {
             res.push([...cur])
             backtrack(i+1, cur);
             cur.pop();
+            // console.log(cur, i);
+            // console.log(res, i);
         }
     }
     backtrack(0,[]);

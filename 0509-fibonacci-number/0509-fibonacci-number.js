@@ -3,15 +3,18 @@
  * @return {number}
  */
 var fib = function(n) {
-    let memo = Array(n+1).fill(-1);
-    const fibo = (n, memo) =>{
-        if(n <= 1) return n;
+    if(n <= 1) return n;
     
-        if(memo[n] !== -1) return memo[n];
+    let cur = 0;
+    let prev = 1;
+    let prev2 = 0;
+    
+    for(let i = 2; i <= n; i++){
+        cur = prev + prev2;
         
-        memo[n] = fibo(n - 1, memo) + fibo(n - 2, memo);
-
-        return memo[n];  
+        prev2 = prev;
+        prev = cur;
     }
-    return fibo(n, memo);
+    
+    return cur;
 };

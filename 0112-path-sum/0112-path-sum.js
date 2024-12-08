@@ -12,18 +12,13 @@
  * @return {boolean}
  */
 var hasPathSum = function(root, targetSum) {
-    var dfs = function(curr, currentSum, targetSum) {
-        if (!curr) {
-            return false;
-        }
-
-        currentSum += curr.val;
-
-        if (curr.left === null && curr.right === null) {
-            return currentSum === targetSum;
-        }
-
-        return dfs(curr.left, currentSum, targetSum) || dfs(curr.right, currentSum, targetSum);
+    if(root == null) return false;
+    
+    let cur = targetSum - root.val;
+    
+    if(root.left == null && root.right == null){
+        return cur == 0;
     }
-    return dfs(root, 0, targetSum);
+    
+    return hasPathSum(root.left, cur) || hasPathSum(root.right, cur) 
 };

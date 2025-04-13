@@ -18,6 +18,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Math
 |  |
 | ------- |
+| [2050-count-good-numbers](https://github.com/gino23odar/Leetcode-submissions/tree/master/2050-count-good-numbers) |
 | [2998-count-symmetric-integers](https://github.com/gino23odar/Leetcode-submissions/tree/master/2998-count-symmetric-integers) |
 | [3243-count-the-number-of-powerful-integers](https://github.com/gino23odar/Leetcode-submissions/tree/master/3243-count-the-number-of-powerful-integers) |
 ## String
@@ -32,4 +33,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [2998-count-symmetric-integers](https://github.com/gino23odar/Leetcode-submissions/tree/master/2998-count-symmetric-integers) |
+## Recursion
+|  |
+| ------- |
+| [2050-count-good-numbers](https://github.com/gino23odar/Leetcode-submissions/tree/master/2050-count-good-numbers) |
 <!---LeetCode Topics End-->

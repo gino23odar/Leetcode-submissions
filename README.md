@@ -18,6 +18,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Math
 |  |
 | ------- |
+| [0797-rabbits-in-forest](https://github.com/gino23odar/Leetcode-submissions/tree/master/0797-rabbits-in-forest) |
 | [2050-count-good-numbers](https://github.com/gino23odar/Leetcode-submissions/tree/master/2050-count-good-numbers) |
 | [2998-count-symmetric-integers](https://github.com/gino23odar/Leetcode-submissions/tree/master/2998-count-symmetric-integers) |
 | [3243-count-the-number-of-powerful-integers](https://github.com/gino23odar/Leetcode-submissions/tree/master/3243-count-the-number-of-powerful-integers) |
@@ -40,6 +41,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Array
 |  |
 | ------- |
+| [0797-rabbits-in-forest](https://github.com/gino23odar/Leetcode-submissions/tree/master/0797-rabbits-in-forest) |
 | [2280-count-good-triplets-in-an-array](https://github.com/gino23odar/Leetcode-submissions/tree/master/2280-count-good-triplets-in-an-array) |
 ## Binary Search
 |  |
@@ -65,4 +67,12 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [2280-count-good-triplets-in-an-array](https://github.com/gino23odar/Leetcode-submissions/tree/master/2280-count-good-triplets-in-an-array) |
+## Hash Table
+|  |
+| ------- |
+| [0797-rabbits-in-forest](https://github.com/gino23odar/Leetcode-submissions/tree/master/0797-rabbits-in-forest) |
+## Greedy
+|  |
+| ------- |
+| [0797-rabbits-in-forest](https://github.com/gino23odar/Leetcode-submissions/tree/master/0797-rabbits-in-forest) |
 <!---LeetCode Topics End-->

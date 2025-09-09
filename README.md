@@ -30,6 +30,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Dynamic Programming
 |  |
 | ------- |
+| [2408-number-of-people-aware-of-a-secret](https://github.com/gino23odar/Leetcode-submissions/tree/master/2408-number-of-people-aware-of-a-secret) |
 | [3243-count-the-number-of-powerful-integers](https://github.com/gino23odar/Leetcode-submissions/tree/master/3243-count-the-number-of-powerful-integers) |
 ## Enumeration
 |  |
@@ -86,4 +87,12 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [2699-count-the-number-of-fair-pairs](https://github.com/gino23odar/Leetcode-submissions/tree/master/2699-count-the-number-of-fair-pairs) |
+## Queue
+|  |
+| ------- |
+| [2408-number-of-people-aware-of-a-secret](https://github.com/gino23odar/Leetcode-submissions/tree/master/2408-number-of-people-aware-of-a-secret) |
+## Simulation
+|  |
+| ------- |
+| [2408-number-of-people-aware-of-a-secret](https://github.com/gino23odar/Leetcode-submissions/tree/master/2408-number-of-people-aware-of-a-secret) |
 <!---LeetCode Topics End-->

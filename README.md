@@ -44,6 +44,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0797-rabbits-in-forest](https://github.com/gino23odar/Leetcode-submissions/tree/master/0797-rabbits-in-forest) |
+| [1834-minimum-number-of-people-to-teach](https://github.com/gino23odar/Leetcode-submissions/tree/master/1834-minimum-number-of-people-to-teach) |
 | [2280-count-good-triplets-in-an-array](https://github.com/gino23odar/Leetcode-submissions/tree/master/2280-count-good-triplets-in-an-array) |
 | [2699-count-the-number-of-fair-pairs](https://github.com/gino23odar/Leetcode-submissions/tree/master/2699-count-the-number-of-fair-pairs) |
 ## Binary Search
@@ -75,10 +76,12 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0797-rabbits-in-forest](https://github.com/gino23odar/Leetcode-submissions/tree/master/0797-rabbits-in-forest) |
+| [1834-minimum-number-of-people-to-teach](https://github.com/gino23odar/Leetcode-submissions/tree/master/1834-minimum-number-of-people-to-teach) |
 ## Greedy
 |  |
 | ------- |
 | [0797-rabbits-in-forest](https://github.com/gino23odar/Leetcode-submissions/tree/master/0797-rabbits-in-forest) |
+| [1834-minimum-number-of-people-to-teach](https://github.com/gino23odar/Leetcode-submissions/tree/master/1834-minimum-number-of-people-to-teach) |
 ## Two Pointers
 |  |
 | ------- |

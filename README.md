@@ -23,10 +23,12 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [2050-count-good-numbers](https://github.com/gino23odar/Leetcode-submissions/tree/master/2050-count-good-numbers) |
 | [2998-count-symmetric-integers](https://github.com/gino23odar/Leetcode-submissions/tree/master/2998-count-symmetric-integers) |
 | [3243-count-the-number-of-powerful-integers](https://github.com/gino23odar/Leetcode-submissions/tree/master/3243-count-the-number-of-powerful-integers) |
+| [3462-vowels-game-in-a-string](https://github.com/gino23odar/Leetcode-submissions/tree/master/3462-vowels-game-in-a-string) |
 ## String
 |  |
 | ------- |
 | [3243-count-the-number-of-powerful-integers](https://github.com/gino23odar/Leetcode-submissions/tree/master/3243-count-the-number-of-powerful-integers) |
+| [3462-vowels-game-in-a-string](https://github.com/gino23odar/Leetcode-submissions/tree/master/3462-vowels-game-in-a-string) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -98,4 +100,12 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [2408-number-of-people-aware-of-a-secret](https://github.com/gino23odar/Leetcode-submissions/tree/master/2408-number-of-people-aware-of-a-secret) |
+## Brainteaser
+|  |
+| ------- |
+| [3462-vowels-game-in-a-string](https://github.com/gino23odar/Leetcode-submissions/tree/master/3462-vowels-game-in-a-string) |
+## Game Theory
+|  |
+| ------- |
+| [3462-vowels-game-in-a-string](https://github.com/gino23odar/Leetcode-submissions/tree/master/3462-vowels-game-in-a-string) |
 <!---LeetCode Topics End-->

@@ -27,6 +27,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## String
 |  |
 | ------- |
+| [1006-vowel-spellchecker](https://github.com/gino23odar/Leetcode-submissions/tree/master/1006-vowel-spellchecker) |
 | [3243-count-the-number-of-powerful-integers](https://github.com/gino23odar/Leetcode-submissions/tree/master/3243-count-the-number-of-powerful-integers) |
 | [3462-vowels-game-in-a-string](https://github.com/gino23odar/Leetcode-submissions/tree/master/3462-vowels-game-in-a-string) |
 | [3872-find-most-frequent-vowel-and-consonant](https://github.com/gino23odar/Leetcode-submissions/tree/master/3872-find-most-frequent-vowel-and-consonant) |
@@ -47,6 +48,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0797-rabbits-in-forest](https://github.com/gino23odar/Leetcode-submissions/tree/master/0797-rabbits-in-forest) |
+| [1006-vowel-spellchecker](https://github.com/gino23odar/Leetcode-submissions/tree/master/1006-vowel-spellchecker) |
 | [1834-minimum-number-of-people-to-teach](https://github.com/gino23odar/Leetcode-submissions/tree/master/1834-minimum-number-of-people-to-teach) |
 | [2280-count-good-triplets-in-an-array](https://github.com/gino23odar/Leetcode-submissions/tree/master/2280-count-good-triplets-in-an-array) |
 | [2699-count-the-number-of-fair-pairs](https://github.com/gino23odar/Leetcode-submissions/tree/master/2699-count-the-number-of-fair-pairs) |
@@ -79,6 +81,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0797-rabbits-in-forest](https://github.com/gino23odar/Leetcode-submissions/tree/master/0797-rabbits-in-forest) |
+| [1006-vowel-spellchecker](https://github.com/gino23odar/Leetcode-submissions/tree/master/1006-vowel-spellchecker) |
 | [1834-minimum-number-of-people-to-teach](https://github.com/gino23odar/Leetcode-submissions/tree/master/1834-minimum-number-of-people-to-teach) |
 | [3872-find-most-frequent-vowel-and-consonant](https://github.com/gino23odar/Leetcode-submissions/tree/master/3872-find-most-frequent-vowel-and-consonant) |
 ## Greedy

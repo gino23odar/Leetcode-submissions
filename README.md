@@ -77,12 +77,14 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [2280-count-good-triplets-in-an-array](https://github.com/gino23odar/Leetcode-submissions/tree/master/2280-count-good-triplets-in-an-array) |
+| [3678-design-task-manager](https://github.com/gino23odar/Leetcode-submissions/tree/master/3678-design-task-manager) |
 ## Hash Table
 |  |
 | ------- |
 | [0797-rabbits-in-forest](https://github.com/gino23odar/Leetcode-submissions/tree/master/0797-rabbits-in-forest) |
 | [1006-vowel-spellchecker](https://github.com/gino23odar/Leetcode-submissions/tree/master/1006-vowel-spellchecker) |
 | [1834-minimum-number-of-people-to-teach](https://github.com/gino23odar/Leetcode-submissions/tree/master/1834-minimum-number-of-people-to-teach) |
+| [3678-design-task-manager](https://github.com/gino23odar/Leetcode-submissions/tree/master/3678-design-task-manager) |
 | [3872-find-most-frequent-vowel-and-consonant](https://github.com/gino23odar/Leetcode-submissions/tree/master/3872-find-most-frequent-vowel-and-consonant) |
 ## Greedy
 |  |
@@ -117,4 +119,12 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [3872-find-most-frequent-vowel-and-consonant](https://github.com/gino23odar/Leetcode-submissions/tree/master/3872-find-most-frequent-vowel-and-consonant) |
+## Design
+|  |
+| ------- |
+| [3678-design-task-manager](https://github.com/gino23odar/Leetcode-submissions/tree/master/3678-design-task-manager) |
+## Heap (Priority Queue)
+|  |
+| ------- |
+| [3678-design-task-manager](https://github.com/gino23odar/Leetcode-submissions/tree/master/3678-design-task-manager) |
 <!---LeetCode Topics End-->

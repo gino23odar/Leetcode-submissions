@@ -49,6 +49,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0120-triangle](https://github.com/gino23odar/Leetcode-submissions/tree/master/0120-triangle) |
+| [0611-valid-triangle-number](https://github.com/gino23odar/Leetcode-submissions/tree/master/0611-valid-triangle-number) |
 | [0797-rabbits-in-forest](https://github.com/gino23odar/Leetcode-submissions/tree/master/0797-rabbits-in-forest) |
 | [1006-vowel-spellchecker](https://github.com/gino23odar/Leetcode-submissions/tree/master/1006-vowel-spellchecker) |
 | [1834-minimum-number-of-people-to-teach](https://github.com/gino23odar/Leetcode-submissions/tree/master/1834-minimum-number-of-people-to-teach) |
@@ -57,6 +58,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Binary Search
 |  |
 | ------- |
+| [0611-valid-triangle-number](https://github.com/gino23odar/Leetcode-submissions/tree/master/0611-valid-triangle-number) |
 | [2280-count-good-triplets-in-an-array](https://github.com/gino23odar/Leetcode-submissions/tree/master/2280-count-good-triplets-in-an-array) |
 | [2699-count-the-number-of-fair-pairs](https://github.com/gino23odar/Leetcode-submissions/tree/master/2699-count-the-number-of-fair-pairs) |
 ## Divide and Conquer
@@ -91,15 +93,18 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Greedy
 |  |
 | ------- |
+| [0611-valid-triangle-number](https://github.com/gino23odar/Leetcode-submissions/tree/master/0611-valid-triangle-number) |
 | [0797-rabbits-in-forest](https://github.com/gino23odar/Leetcode-submissions/tree/master/0797-rabbits-in-forest) |
 | [1834-minimum-number-of-people-to-teach](https://github.com/gino23odar/Leetcode-submissions/tree/master/1834-minimum-number-of-people-to-teach) |
 ## Two Pointers
 |  |
 | ------- |
+| [0611-valid-triangle-number](https://github.com/gino23odar/Leetcode-submissions/tree/master/0611-valid-triangle-number) |
 | [2699-count-the-number-of-fair-pairs](https://github.com/gino23odar/Leetcode-submissions/tree/master/2699-count-the-number-of-fair-pairs) |
 ## Sorting
 |  |
 | ------- |
+| [0611-valid-triangle-number](https://github.com/gino23odar/Leetcode-submissions/tree/master/0611-valid-triangle-number) |
 | [2699-count-the-number-of-fair-pairs](https://github.com/gino23odar/Leetcode-submissions/tree/master/2699-count-the-number-of-fair-pairs) |
 ## Queue
 |  |

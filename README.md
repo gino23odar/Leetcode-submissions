@@ -19,6 +19,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0797-rabbits-in-forest](https://github.com/gino23odar/Leetcode-submissions/tree/master/0797-rabbits-in-forest) |
+| [1018-largest-perimeter-triangle](https://github.com/gino23odar/Leetcode-submissions/tree/master/1018-largest-perimeter-triangle) |
 | [1440-convert-integer-to-the-sum-of-two-no-zero-integers](https://github.com/gino23odar/Leetcode-submissions/tree/master/1440-convert-integer-to-the-sum-of-two-no-zero-integers) |
 | [2050-count-good-numbers](https://github.com/gino23odar/Leetcode-submissions/tree/master/2050-count-good-numbers) |
 | [2998-count-symmetric-integers](https://github.com/gino23odar/Leetcode-submissions/tree/master/2998-count-symmetric-integers) |
@@ -52,6 +53,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0611-valid-triangle-number](https://github.com/gino23odar/Leetcode-submissions/tree/master/0611-valid-triangle-number) |
 | [0797-rabbits-in-forest](https://github.com/gino23odar/Leetcode-submissions/tree/master/0797-rabbits-in-forest) |
 | [1006-vowel-spellchecker](https://github.com/gino23odar/Leetcode-submissions/tree/master/1006-vowel-spellchecker) |
+| [1018-largest-perimeter-triangle](https://github.com/gino23odar/Leetcode-submissions/tree/master/1018-largest-perimeter-triangle) |
 | [1834-minimum-number-of-people-to-teach](https://github.com/gino23odar/Leetcode-submissions/tree/master/1834-minimum-number-of-people-to-teach) |
 | [2280-count-good-triplets-in-an-array](https://github.com/gino23odar/Leetcode-submissions/tree/master/2280-count-good-triplets-in-an-array) |
 | [2699-count-the-number-of-fair-pairs](https://github.com/gino23odar/Leetcode-submissions/tree/master/2699-count-the-number-of-fair-pairs) |
@@ -95,6 +97,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | ------- |
 | [0611-valid-triangle-number](https://github.com/gino23odar/Leetcode-submissions/tree/master/0611-valid-triangle-number) |
 | [0797-rabbits-in-forest](https://github.com/gino23odar/Leetcode-submissions/tree/master/0797-rabbits-in-forest) |
+| [1018-largest-perimeter-triangle](https://github.com/gino23odar/Leetcode-submissions/tree/master/1018-largest-perimeter-triangle) |
 | [1834-minimum-number-of-people-to-teach](https://github.com/gino23odar/Leetcode-submissions/tree/master/1834-minimum-number-of-people-to-teach) |
 ## Two Pointers
 |  |
@@ -105,6 +108,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0611-valid-triangle-number](https://github.com/gino23odar/Leetcode-submissions/tree/master/0611-valid-triangle-number) |
+| [1018-largest-perimeter-triangle](https://github.com/gino23odar/Leetcode-submissions/tree/master/1018-largest-perimeter-triangle) |
 | [2699-count-the-number-of-fair-pairs](https://github.com/gino23odar/Leetcode-submissions/tree/master/2699-count-the-number-of-fair-pairs) |
 ## Queue
 |  |

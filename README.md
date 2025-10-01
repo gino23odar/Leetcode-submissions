@@ -21,6 +21,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0797-rabbits-in-forest](https://github.com/gino23odar/Leetcode-submissions/tree/master/0797-rabbits-in-forest) |
 | [1018-largest-perimeter-triangle](https://github.com/gino23odar/Leetcode-submissions/tree/master/1018-largest-perimeter-triangle) |
 | [1440-convert-integer-to-the-sum-of-two-no-zero-integers](https://github.com/gino23odar/Leetcode-submissions/tree/master/1440-convert-integer-to-the-sum-of-two-no-zero-integers) |
+| [1642-water-bottles](https://github.com/gino23odar/Leetcode-submissions/tree/master/1642-water-bottles) |
 | [2050-count-good-numbers](https://github.com/gino23odar/Leetcode-submissions/tree/master/2050-count-good-numbers) |
 | [2998-count-symmetric-integers](https://github.com/gino23odar/Leetcode-submissions/tree/master/2998-count-symmetric-integers) |
 | [3243-count-the-number-of-powerful-integers](https://github.com/gino23odar/Leetcode-submissions/tree/master/3243-count-the-number-of-powerful-integers) |
@@ -117,6 +118,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Simulation
 |  |
 | ------- |
+| [1642-water-bottles](https://github.com/gino23odar/Leetcode-submissions/tree/master/1642-water-bottles) |
 | [2408-number-of-people-aware-of-a-secret](https://github.com/gino23odar/Leetcode-submissions/tree/master/2408-number-of-people-aware-of-a-secret) |
 ## Brainteaser
 |  |

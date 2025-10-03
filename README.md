@@ -51,6 +51,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0120-triangle](https://github.com/gino23odar/Leetcode-submissions/tree/master/0120-triangle) |
+| [0407-trapping-rain-water-ii](https://github.com/gino23odar/Leetcode-submissions/tree/master/0407-trapping-rain-water-ii) |
 | [0611-valid-triangle-number](https://github.com/gino23odar/Leetcode-submissions/tree/master/0611-valid-triangle-number) |
 | [0797-rabbits-in-forest](https://github.com/gino23odar/Leetcode-submissions/tree/master/0797-rabbits-in-forest) |
 | [1006-vowel-spellchecker](https://github.com/gino23odar/Leetcode-submissions/tree/master/1006-vowel-spellchecker) |
@@ -139,5 +140,14 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Heap (Priority Queue)
 |  |
 | ------- |
+| [0407-trapping-rain-water-ii](https://github.com/gino23odar/Leetcode-submissions/tree/master/0407-trapping-rain-water-ii) |
 | [3678-design-task-manager](https://github.com/gino23odar/Leetcode-submissions/tree/master/3678-design-task-manager) |
+## Breadth-First Search
+|  |
+| ------- |
+| [0407-trapping-rain-water-ii](https://github.com/gino23odar/Leetcode-submissions/tree/master/0407-trapping-rain-water-ii) |
+## Matrix
+|  |
+| ------- |
+| [0407-trapping-rain-water-ii](https://github.com/gino23odar/Leetcode-submissions/tree/master/0407-trapping-rain-water-ii) |
 <!---LeetCode Topics End-->
